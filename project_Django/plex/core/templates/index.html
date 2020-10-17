@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div align="center">
+        <form method="get" align="center">
+            <div>
+                <input type="search" name="last_name" placeholder="Фамилия" value="{{last_name}}">
+                <input type="search" name="first_name" placeholder="Имя" value="{{first_name}}">
+                <input type="search" name="age" placeholder="Возраст" value="{{age}}">
+            </div>
+            <div>
+                <input type="submit" value="Search">
+            </div>
+        </form>
+    </div>
+   <br>
+   <table border="1" align="center">
+       <caption>СПИСОК УЧИТЕЛЕЙ</caption>
+       <tr>
+           <th>№:</th>
+           <th>Фамилия</th>
+           <th>Имя</th>
+           <th>Отчество</th>
+           <th>Возраст</th>
+       </tr>
+       {% for teacher in teachers %}
+           <tr>
+               <td align="center">{{ forloop.counter }}</td>
+           <td>{{teacher.last_name}}</td>
+           <td>{{teacher.first_name}}</td>
+           <td>{{teacher.middle_name}}</td>
+           <td align="center">{{teacher.age}}</td>
+           </tr>
+       {% endfor %}
+   </table>
+</body>
+</html>
